@@ -1,6 +1,7 @@
 from flask import Flask, make_response
 from flask_migrate import Migrate
 
+
 from models import db, Zookeeper, Enclosure, Animal
 
 app = Flask(__name__)
@@ -23,7 +24,7 @@ def animal_by_id(id):
     response_body += f'<ul>Name: {animal.name}</ul>'
     response_body += f'<ul>Species: {animal.species}</ul>'
     response_body += f'<ul>Zookeeper: {animal.zookeeper.name}</ul>'
-    response_body += f'<ul>Enclosure: {animal.enclosure.environment}</ul>'
+    response_body += f'<ul>Enclosure: {animal.enclosure}</ul>'
 
     return make_response(response_body)
 

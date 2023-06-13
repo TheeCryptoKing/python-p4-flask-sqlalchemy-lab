@@ -32,11 +32,11 @@ class Animal(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     species = db.Column(db.String)
     
-    zookeeper_id = db.Column(db.Integer, db.ForeignKey('zookeeper.id'))
-    enclosure_id  = db.Column(db.Integer, db.ForeignKey('enclosure.id'))
+    zookeeper_id = db.Column(db.Integer, db.ForeignKey('zookeepers.id'))
+    enclosure_id  = db.Column(db.Integer, db.ForeignKey('enclosures.id'))
     
     zookeeper = db.relationship('Zookeeper', back_populates='animals')
-    enclosures = db.relationship('Enclousre', back_populates='animals')
+    enclosure = db.relationship('Enclosure', back_populates='animals')
     
     
     
